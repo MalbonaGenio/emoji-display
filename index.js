@@ -1,5 +1,3 @@
-// Hook an event listener up with the button, and log out the input field's value when it's clicked
-
 const myEmojis = ["👨‍💻", "⛷", "🍲"]
 const emojiContainer = document.getElementById("emoji-container")
 
@@ -9,8 +7,17 @@ for (let i = 0; i < myEmojis.length; i++) {
     emojiContainer.append(emoji)
 }
 
-const button = document.getElementById("push-btn")
-const textInput = document.getElementById("emoji-input")
-button.addEventListener("click",function(){
-    console.log(textInput.value)
-})
+const pushBtn = document.getElementById("push-btn")
+pushBtn.addEventListener("click", inputButton)
+
+function inputButton(){
+    const emojiInput = document.getElementById("emoji-input")
+
+//empty string evaluates to false so instead of: if (emojiInput.value !== '') we can:
+    if (emojiInput.value)  {
+        myEmojis.push(emojiInput.value)
+        emojiInput.value = ''
+
+    }
+   
+}
