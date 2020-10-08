@@ -36,3 +36,19 @@ function inputButtonBeginning(){
         renderEmoji()
     }
 }
+
+const shiftBtn = document.getElementById("shift-btn")
+shiftBtn.addEventListener("click", eraseButtonEnd)
+
+function eraseButtonEnd(){
+        myEmojis.shift()
+        renderEmoji()
+}
+
+const popBtn = document.getElementById("pop-btn")
+popBtn.addEventListener("click", eraseButtonBeginning)
+
+function eraseButtonBeginning(){
+        myEmojis.pop()
+        renderEmoji()
+}
